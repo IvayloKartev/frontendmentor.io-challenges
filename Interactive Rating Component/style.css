@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #141519;
+}
+main {
+    width: 100vw;
+    height: 100vh;
+    background-color: #141519;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Overpass";
+}
+.window {
+    height: 412.5px;
+    width: 412.5px;
+    background: linear-gradient(#212832,#191d24);
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.star-circle {
+    border-radius: 50%;
+    background-color: #262d37;
+    width: 50px;
+    height: 50px;
+    color: #fb750d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title {
+    color: #ffffff;
+    margin: 0;
+    font-size: 27.5px;
+    margin-top: 10px;
+}
+.text {
+    color: #717882;
+    font-size: 15px;
+    line-height: 1.5;
+}
+.grades {
+    width: 330px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+}
+.grade {
+    width: 50px;
+    height: 50px;
+    background-color: #262f38;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #717882;
+}
+.submt {
+    width: 330px;
+    height: 45px;
+    background-color: #fb750d;
+    border-radius: 25px;
+    border:none;
+    color: white;
+}
+.content {
+    width: 345px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.submt:hover{
+    background-color: white;
+    color: #fb750d;
+}
+.submt:active{
+    background-color: white;
+    color: #fb750d;
+}
+.grade:hover{
+    background-color: #7b8795;
+    color: white;
+}
+.grade-activated{
+    width: 50px;
+    height: 50px;
+    background-color: #fb750d;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
