@@ -13,37 +13,43 @@ main {
     font-family: "Overpass";
 }
 .window {
-    height: 412.5px;
+    height: 415px;
     width: 412.5px;
     background: linear-gradient(#212832,#191d24);
-    border-radius: 35px;
+    background: radial-gradient(circle at top, #222933,#191d24);
+    border-radius: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 .star-circle {
     border-radius: 50%;
     background-color: #262d37;
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 70px;
     color: #fb750d;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 .title {
     color: #ffffff;
     margin: 0;
     font-size: 27.5px;
-    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .text {
-    color: #717882;
+    color: #9198a2;
     font-size: 15px;
-    line-height: 1.5;
+    line-height: 1.6;
+    margin:0;
+    font-weight: 400;
 }
 .grades {
-    width: 330px;
+    width: 340px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -58,21 +64,27 @@ main {
     justify-content: center;
     align-items: center;
     color: #717882;
+    font-weight: 700;
+    font-size: 16px;
 }
 .submt {
-    width: 330px;
-    height: 45px;
+    width: 340px;
+    height: 60px;
     background-color: #fb750d;
     border-radius: 25px;
     border:none;
     color: white;
+    font-weight: 700;
+    font-size: 14px;
 }
 .content {
     width: 345px;
-    height: 350px;
+    height: 360px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 32.5px;
+    justify-content: space-between;
+    overflow: hidden;
 }
 .submt:hover{
     background-color: white;
@@ -95,4 +107,56 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: 700;
+}
+#thanksImg {
+    position: absolute;
+    top: 0; 
+    left:0;
+    visibility: hidden;
+    margin-top: 0;
+}
+.results-screen {
+    background-color: #252e37;
+    color:#fb750d;
+    border-radius: 25px;
+    width: 200px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+@media only screen and (max-width: 500px) {
+    .window {
+        height: 325px;
+        width: 325px;
+    }
+    .content {
+        width: 275px;
+        height: 275px;
+        gap: 15px;
+    }
+    .submt {
+        width: 275px;
+        height: 40px;
+    }
+    .title {
+        font-size: 22.5px;
+    }
+    .text {
+        font-size: 12px;
+        margin: 0;
+    }
+    .grades {
+        width: 275px;
+        height: 50px;
+    }
+    .star-circle {
+        width: 40px;
+        height: 40px;
+    }
 }
