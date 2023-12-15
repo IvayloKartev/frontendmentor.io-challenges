@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+.EC-card-1 {
+    position: absolute;
+    top: 10vw;
+    left: 10vw;
+    background-image: url(./images/bg-card-front.png);
+    width: 447px;
+    height: 245px;
+}
+.EC-card-2 {
+    position: absolute;
+    top: 25vw;
+    left: 12vw;
+    background-image: url(./images/bg-card-back.png);
+    width: 447px;
+    height: 245px;
+}
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+    height: 100vh;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 450px;
+}
+.textbox {
+    height: 2rem;
+    border-radius: 10px;
+}
+.card-details {
+    border: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
+.datebox {
+    height: 2rem;
+    width: 3rem;
+    border-radius: 10px;
+}
+#cvc {
+    height: 2rem;
+    width: calc(450px - 9rem);
+    border-radius: 10px;
+}
+#submtbtn {
+    width: 450px;
+    height: 2.5rem;
+    border-radius: 10px;
+}
