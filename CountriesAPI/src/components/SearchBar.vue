@@ -1,13 +1,25 @@
 <template>
     <div class="box">
-        
+        <input type="text" v-model="selectedCountry"/>
     </div>
 </template>
 
 <script lang="ts">
     import { defineComponent, ref } from 'vue';
+    import type { PropType } from 'vue';
+
     export default defineComponent({
-        
+        props : {
+            selectedCountry : {
+                type : String as PropType<String>,
+            }
+        },
+        setup() {
+            const selectedCountry = ref<string>();
+            return {
+                selectedCountry
+            }
+        }
     })
 </script>
 

@@ -1,11 +1,11 @@
 <template>
-    <div class="card">
+    <div class="card" @click="getCountry(country?.country!)">
         <img class="flag" v-bind:src="country?.image"/>
         <div class="data">
             <p class="country">{{ country?.country }}</p>
-            <p>Population : {{ country?.population }}</p>
-            <p>Region : {{ country?.region }}</p>
-            <p>Capital : {{ country?.capital }}</p>
+            <p><span class="cat">Population</span> : {{ country?.population }}</p>
+            <p><span class="cat">Region</span> : {{ country?.region }}</p>
+            <p><span class="cat">Capital</span> : {{ country?.capital }}</p>
         </div>
     </div>
 </template>
@@ -28,9 +28,15 @@
                 type: Object as PropType<Country>,
             }
         },
-        setup(props) {
+        setup(props, ctx) {
+
+            function getCountry(country : string) {
+                ctx.emit("getCountry", country)
+            }
+
             return {
-                props
+                props,
+                getCountry
             }
         }
     })
@@ -38,21 +44,26 @@
 
 <style scoped>
     .card {
-        width : 20vw;
-        height: 40vh;
-        border-radius: 20px;
+        width : 13.5vw;
+        height: 35vh;
+        border-radius: 5px;
         box-shadow: 1px 1px 10px #f3f3f3;
         background-color: white;
+        font-size: 12.5px;
     }
     .flag {
         width: 100%;
         height: 50%;
-        border-radius: 10px 10px 0 0;
+        border-radius: 5px 5px 0 0;
     }
     .country {
         font-weight: bold;
+        font-size: 1rem;
     }
     .data {
-        padding: 30px;
+        padding: 10px;
+    }
+    .cat {
+        font-weight: bold;
     }
 </style>

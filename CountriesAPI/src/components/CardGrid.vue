@@ -1,7 +1,8 @@
 <template>
     <section class="grid">
         <CountryCard v-for="country in countries"
-                     v-bind:country="country">
+                     v-bind:country="country"
+                     @getCountry="getCountry">
         </CountryCard>
         <div></div>
     </section>
@@ -9,7 +10,7 @@
 
 <script lang="ts">
     import CountryCard from './CountryCard.vue';
-    import { ref, defineComponent } from 'vue';
+    import { ref, defineComponent, watch } from 'vue';
     import type { PropType } from 'vue';
 
     interface Country {
@@ -30,9 +31,26 @@
             required: true,
         },
   },
-        setup(props) {
+        setup(props, ctx) {
+
+            const displayCountry = ref<string>('');
+
+            function setDisplayCountry(dCountry : string) {
+                ctx.emit("setDisplayCountry", dCountry)
+            }
+
+            function getCountry(country : string) {
+                displayCountry.value = country;
+            }
+
+            watch(displayCountry, (newCountry) => { 
+                setDisplayCountry(newCountry)
+            })
+
             return {
-                props
+                props,
+                setDisplayCountry,
+                getCountry
             }
         }
     })
@@ -40,8 +58,10 @@
 
 <style scoped>
     .grid {
+        margin: auto;
+        width: 60vw;
         display: grid;
         grid-template-columns: auto auto auto auto;
-        gap: 60px;
+        gap : 75px;
     }
 </style>
