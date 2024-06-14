@@ -9,10 +9,11 @@
     import { defineComponent } from 'vue';
 
     export default defineComponent({
+        components : {
+            Header
+        },
         setup() {
-            return {
-                Header
-            }
+            
         }
     })
 </script>
@@ -24,5 +25,7 @@
         left: 0;
         width: 100vw;
         height: 100vh;
+        z-index: 999;
+        background-color: aquamarine;
     }
 </style>

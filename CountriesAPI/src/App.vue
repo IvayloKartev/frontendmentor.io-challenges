@@ -33,6 +33,7 @@
       SearchBar,
       FilterBox,
       CardGrid,
+      CardDetails
     },
     setup() {
       const countries = ref<Array<Country>>([]);
@@ -87,7 +88,6 @@
         selectedRegion,
         setRegion,
         setDisplayCountry,
-        CardDetails,
         displayCountry
       };
     }
